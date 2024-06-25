@@ -23,13 +23,17 @@ public class Cliente extends Usuario {
         System.out.println("Digite o preço do serviço:");
         double precoServico = leitor.nextDouble();
         leitor.nextLine(); 
-        
+
         Servico novoServico = new Servico(nomeServico, descricaoServico, precoServico);
 
         System.out.println("Solicitando Serviço: " + novoServico.getNomeServico());
 
         historicoDeSolicitacoes.add(novoServico);
         System.out.println("Serviço solicitado: " + novoServico.getNomeServico());
+    }
+
+    public List<Servico> getHistoricoDeSolicitacoes() {
+        return historicoDeSolicitacoes;
     }
 
     public void exibirHistoricoDeSolicitacoes() {
