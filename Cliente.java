@@ -20,11 +20,7 @@ public class Cliente extends Usuario {
         System.out.println("Digite a descrição do serviço:");
         String descricaoServico = leitor.nextLine();
 
-        System.out.println("Digite o preço do serviço:");
-        double precoServico = leitor.nextDouble();
-        leitor.nextLine(); 
-
-        Servico novoServico = new Servico(nomeServico, descricaoServico, precoServico);
+        Servico novoServico = new Servico(nomeServico, descricaoServico);
 
         System.out.println("Solicitando Serviço: " + novoServico.getNomeServico());
 
@@ -39,7 +35,7 @@ public class Cliente extends Usuario {
     public void exibirHistoricoDeSolicitacoes() {
         System.out.println("Histórico de Solicitações:");
         for (Servico servico : historicoDeSolicitacoes) {
-            System.out.println(servico.getNomeServico() + " - " + servico.getDescricaoServico() + " - Preço: " + servico.getPrecoServico());
+            System.out.println(servico.getNomeServico() + " - " + servico.getDescricaoServico());
         }
     }
 }

@@ -2,13 +2,11 @@ public class Servico {
 
     private String nomeServico;
     private String descricaoServico;
-    private double precoServico;
     private boolean statusServico;
 
-    public Servico(String nomeServico, String descricaoServico, double precoServico) {
+    public Servico(String nomeServico, String descricaoServico ) {
         this.nomeServico = nomeServico;
         this.descricaoServico = descricaoServico;
-        this.precoServico = precoServico;
         this.statusServico = true; 
     }
     
@@ -26,14 +24,6 @@ public class Servico {
 
     public void setDescricaoServico(String descricaoServico) {
         this.descricaoServico = descricaoServico;
-    }
-
-    public double getPrecoServico() {
-        return precoServico;
-    }
-
-    public void setPrecoServico(double precoServico) {
-        this.precoServico = precoServico;
     }
 
     public boolean getStatusServico() {
@@ -73,14 +63,12 @@ public class Servico {
     public void exibirInformacoes() {
         System.out.println("Nome do Serviço: " + nomeServico);
         System.out.println("Descrição: " + descricaoServico);
-        System.out.println("Preço: " + precoServico);
         mostrarStatusServico();
     }
 
     @Override
     public String toString() {
         String status = statusServico ? "ATIVO (pendente)" : "INATIVO (finalizado)";
-        return "Nome do Serviço: " + nomeServico + "\nDescrição: " + descricaoServico + "\nPreço: " + precoServico
-                + "\nStatus: " + status;
+        return "Nome do Serviço: " + nomeServico + "\nDescrição: " + descricaoServico + "\nStatus: " + status;
     }
 }
