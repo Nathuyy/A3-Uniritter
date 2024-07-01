@@ -1,48 +1,35 @@
-
-import java.util.HashMap;
-import java.util.Map;
-
 public class Rua {
     private String nome;
     private String cep;
-    private double areaTotal;
-    private int populacaoTotal;
-    private Map<String, String[]> infraestruturas;
+    private double area;
 
-    public Rua(String nome, String cep, double areaTotal) {
+    public Rua(String nome, String cep, double area) {
         this.nome = nome;
         this.cep = cep;
-        this.areaTotal = areaTotal;
-        this.populacaoTotal = 0; // População inicial
-        this.infraestruturas = new HashMap<>();
+        this.area = area;
     }
 
-    public void cadastrarInfraestrutura(String tipo, String capacidade, String logistica) {
-        infraestruturas.put(tipo, new String[]{capacidade, logistica});
-    }
-
-    public void removerInfraestrutura(String tipo) {
-        infraestruturas.remove(tipo);
-    }
-
-    public double calcularDensidadePopulacional() {
-        return populacaoTotal / areaTotal;
-    }
-
-    // Getters
     public String getNome() {
         return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getCep() {
         return cep;
     }
 
-    public double getAreaTotal() {
-        return areaTotal;
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 
-    public int getPopulacaoTotal() {
-        return populacaoTotal;
+    public double getArea() {
+        return area;
+    }
+
+    public void setArea(double area) {
+        this.area = area;
     }
 }
